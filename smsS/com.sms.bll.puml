@@ -1,0 +1,62 @@
+@startuml
+annotation java.lang.Override
+annotation java.lang.SuppressWarnings
+class com.sms.bll.Student
+class com.sms.bll.User
+class com.sms.dao.StudentDaoImpl
+class com.sms.dao.UserImpl
+class com.sms.form.Login
+class com.sms.form.Mainfrm
+class java.io.BufferedReader
+class java.io.BufferedWriter
+class java.io.FileReader
+class java.io.FileWriter
+class java.io.IOException
+class java.io.Writer
+class java.util.ArrayList
+class java.util.logging.Level
+class java.util.logging.Logger
+class javax.swing.JFrame
+class javax.swing.JOptionPane
+class javax.swing.table.DefaultTableModel
+interface com.sms.dao.StudentDao
+interface com.sms.dao.UserDao
+com.sms.dao.StudentDaoImpl ..> java.lang.Override
+com.sms.dao.StudentDaoImpl ..> com.sms.bll.Student
+com.sms.dao.StudentDaoImpl ..> java.io.BufferedReader
+com.sms.dao.StudentDaoImpl ..> java.io.BufferedWriter
+com.sms.dao.StudentDaoImpl ..> java.io.FileReader
+com.sms.dao.StudentDaoImpl ..> java.io.FileWriter
+com.sms.dao.StudentDaoImpl ..> java.io.IOException
+com.sms.dao.StudentDaoImpl ..> java.io.Writer
+com.sms.dao.StudentDaoImpl ..> java.util.ArrayList
+com.sms.dao.StudentDaoImpl --|> com.sms.dao.StudentDao
+com.sms.dao.UserImpl ..> java.lang.Override
+com.sms.dao.UserImpl ..> com.sms.bll.User
+com.sms.dao.UserImpl ..> java.io.BufferedReader
+com.sms.dao.UserImpl ..> java.io.FileReader
+com.sms.dao.UserImpl ..> java.io.IOException
+com.sms.dao.UserImpl --|> com.sms.dao.UserDao
+com.sms.form.Login ..> java.lang.SuppressWarnings
+com.sms.form.Login ..> com.sms.bll.User
+com.sms.form.Login ..> com.sms.dao.UserImpl
+com.sms.form.Login --|> javax.swing.JFrame
+com.sms.form.Login ..> javax.swing.JOptionPane
+com.sms.form.Login ..> com.sms.dao.UserDao
+com.sms.form.Mainfrm ..> java.lang.SuppressWarnings
+com.sms.form.Mainfrm ..> com.sms.bll.Student
+com.sms.form.Mainfrm ..> com.sms.dao.StudentDaoImpl
+com.sms.form.Mainfrm ..> java.io.IOException
+com.sms.form.Mainfrm ..> java.util.ArrayList
+com.sms.form.Mainfrm ..> java.util.logging.Level
+com.sms.form.Mainfrm ..> java.util.logging.Logger
+com.sms.form.Mainfrm --|> javax.swing.JFrame
+com.sms.form.Mainfrm ..> javax.swing.JOptionPane
+com.sms.form.Mainfrm ..> javax.swing.table.DefaultTableModel
+com.sms.form.Mainfrm ..> com.sms.dao.StudentDao
+com.sms.dao.StudentDao ..> com.sms.bll.Student
+com.sms.dao.StudentDao ..> java.io.IOException
+com.sms.dao.StudentDao ..> java.util.ArrayList
+com.sms.dao.UserDao ..> com.sms.bll.User
+com.sms.dao.UserDao ..> java.io.IOException
+@enduml
